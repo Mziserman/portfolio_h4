@@ -1,0 +1,15 @@
+@import "variables/colors";
+@import "variables/fonts";
+
+@import "base/reset";
+@import "base/base";
+
+@import "macro/main";
+@import "macro/section";
+
+@import "micro/navigation";
+
+@import "pages/home";
+@import "pages/projects";
+@import "pages/skills";
+@import "pages/contact";

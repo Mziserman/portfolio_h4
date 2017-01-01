@@ -1,0 +1,17 @@
+$modular-scale-base: 0.9em;
+* {
+	box-sizing: border-box;
+}
+body, html {
+	@include display(flex);
+	height: 100%;
+	width: 100%;
+	font-family: $base-font;
+	font-size: modular-scale(1);
+
+	background-color: $white;
+}
+h1 {
+	font-family: $title-font;
+	font-size: modular-scale(3);
+}

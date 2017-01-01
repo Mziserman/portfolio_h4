@@ -1,0 +1,11 @@
+#main {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	.wrapper {
+		position: absolute;
+		width: 100%;
+		@include transition(top 0.5s ease);
+		top: 0vh;
+	}
+}
