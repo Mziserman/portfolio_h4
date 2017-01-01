@@ -1,6 +1,6 @@
 "use strict";
 
-class App {
+class Portfolio {
 	constructor() {
 		this.bindReferences();
 		this.bindElements();

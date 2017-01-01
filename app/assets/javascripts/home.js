@@ -1,3 +1,3 @@
 $(document).ready(function() {
-	window.app = new App();
+	window.portfolio = new Portfolio();
 })
