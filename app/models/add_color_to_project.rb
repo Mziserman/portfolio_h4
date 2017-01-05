@@ -1,0 +1,2 @@
+class AddColorToProject < ApplicationRecord
+end
