@@ -1,0 +1,39 @@
+#projects {
+	.container {
+		.projects_container {
+			position: relative;
+			overflow: hidden;
+			width: 100%;
+			height: 100%;
+			.projects {
+				position: absolute;
+				@include display(flex);
+				@include transition(left 0.5s ease);
+				left: 0;
+				height: 100%;
+				.project {
+					@include display(flex);
+					padding: 28px;
+					width: 100%;
+					height: 100%;
+					background-color: $project_color;
+					@include flex-direction(column);
+					.headline {
+						@include display(flex);
+						@include justify-content(space-between);
+						@include flex-direction(row);
+						margin-bottom: 28px;
+					}
+					.baseline {
+						@include display(flex);
+						@include justify-content(space-between);
+						@include flex-direction(row);
+						.picture_container {
+							margin-left: 28px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
