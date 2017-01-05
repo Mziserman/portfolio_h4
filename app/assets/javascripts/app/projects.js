@@ -4,6 +4,7 @@ class Projects {
 	constructor() {
 		this.bindElements();
 		this.$projectsContainer.css('width', this.$projects.length * 100 + "%");
+		this.currentDisplay = 'block';
 	}
 
 	onStop() {
@@ -15,6 +16,21 @@ class Projects {
 		this.$menu.addClass('active');
 		this.bindEvents();
 		this.goTo(0);
+	}
+
+	onResize() {
+		this.resizePictureContainer();
+	}
+
+	resizePictureContainer() {
+		var $picture_container = this.$projects.find('.picture_container');
+		if (this.currentDisplay == 'inline') {
+			$picture_container.css('display', 'block');
+			this.currentDisplay = 'block';
+		} else {
+			$picture_container.css('display', 'inline');
+			this.currentDisplay = 'inline';
+		}
 	}
 
 	bindElements() {

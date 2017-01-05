@@ -30,10 +30,20 @@
             <div class="projects">
               <% @projects.each do |project| %>
                 <div class="project">
-                  <h2><%= project.name %></h2>
-                  <% unless project.url.blank? %>
-                    <a href="<%= project.url %>">Online version</a>
-                  <% end %>
+                  <div class="headline">
+                    <h2><%= project.name %></h2>
+                    <% unless project.url.blank? %>
+                      <a href="<%= project.url %>">Online version</a>
+                    <% end %>
+                  </div>
+                  <div class="baseline">
+                    <div class="description">
+                      <%= project.description %>
+                    </div>
+                    <div class="picture_container">
+                      <img src="<%= project.picture %>" alt="">
+                    </div>
+                  </div>
                 </div>
               <% end %>
             </div>

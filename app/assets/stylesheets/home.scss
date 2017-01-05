@@ -1,15 +1,18 @@
 @import "variables/colors";
+@import "variables/breakpoints";
 @import "variables/fonts";
 
 @import "base/reset";
 @import "base/base";
 
-@import "macro/main";
-@import "macro/section";
+@media screen and (min-width: $break-small) {
+	@import "desktop/macro/main";
+	@import "desktop/macro/section";
 
-@import "micro/navigation";
+	@import "desktop/micro/navigation";
 
-@import "pages/home";
-@import "pages/projects";
-@import "pages/skills";
-@import "pages/contact";
+	@import "desktop/pages/home";
+	@import "desktop/pages/projects";
+	@import "desktop/pages/skills";
+	@import "desktop/pages/contact";
+}

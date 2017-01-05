@@ -43,7 +43,10 @@ class Portfolio {
 		}.bind(this));
 
 		$(window).resize(_.debounce(function(e) {
-			this.currentScreen.reference.onResize();	
+			this.sectionReferences["home"].reference.onResize();
+			this.sectionReferences["projects"].reference.onResize();
+			this.sectionReferences["skills"].reference.onResize();
+			this.sectionReferences["contact"].reference.onResize();
 		}.bind(this), 200));
 	}
 
