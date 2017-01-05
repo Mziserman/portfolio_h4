@@ -1,4 +1,4 @@
-$modular-scale-base: 0.8em;
+$modular-scale-base: 0.75em;
 * {
 	box-sizing: border-box;
 }
@@ -13,13 +13,17 @@ body, html {
 }
 h1 {
 	font-family: $title-font;
-	font-size: modular-scale(4);
+	font-size: modular-scale(5);
 }
 h2 {
 	font-family: $title-font;
-	font-size: modular-scale(3);
+	font-size: modular-scale(4);
 }
 h3 {
+	font-family: $title-font;
+	font-size: modular-scale(3);
+}
+h4 {
 	font-family: $title-font;
 	font-size: modular-scale(2);
 }
