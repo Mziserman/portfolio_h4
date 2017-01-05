@@ -21,7 +21,7 @@ class Home {
 	onResize() {
 		this.$home.find('canvas').remove();
 		this.setupParameters();
-		this.onStart();
+		this.p5 = new p5(this.perlinCircle.bind(this), "home");
 	}
 
 	bindElements() {
