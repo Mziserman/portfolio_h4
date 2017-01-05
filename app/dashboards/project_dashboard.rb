@@ -11,6 +11,7 @@ class ProjectDashboard < Administrate::BaseDashboard
     skills: Field::HasMany,
     id: Field::Number,
     name: Field::String,
+    color: Field::String,
     description: Field::Text,
     picture: Field::String,
     url: Field::String,
@@ -39,6 +40,7 @@ class ProjectDashboard < Administrate::BaseDashboard
     :description,
     :picture,
     :url,
+    :color,
     :created_at,
     :updated_at,
   ].freeze
@@ -52,6 +54,7 @@ class ProjectDashboard < Administrate::BaseDashboard
     :description,
     :picture,
     :url,
+    :color,
   ].freeze
 
   # Overwrite this method to customize how projects are displayed
