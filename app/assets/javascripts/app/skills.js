@@ -13,7 +13,7 @@ class Skills {
 	}
 
 	onResize() {
-		this.resizePictureContainer();
+
 	}
 
 	bindElements() {

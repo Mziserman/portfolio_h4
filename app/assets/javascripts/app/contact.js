@@ -13,7 +13,7 @@ class Contact {
 	}
 
 	onResize() {
-		this.resizePictureContainer();
+
 	}
 
 	bindElements() {
