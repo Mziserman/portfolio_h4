@@ -39,8 +39,10 @@
                   <div class="baseline">
                     <div class="description">
                       <%= project.description %>
+                      <br>
                       <% project.domains.each do |domain| %>
                         <%= domain.name %>
+                        <br>
                         <% domain.skills.each do |skill| %>
                           <%= skill.name %>
                         <% end %>
