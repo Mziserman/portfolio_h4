@@ -9,5 +9,6 @@ class Project < ApplicationRecord
         domains << skill.domain
       end
     end
+    domains
   end
 end
