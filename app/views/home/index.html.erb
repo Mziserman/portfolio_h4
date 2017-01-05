@@ -39,6 +39,12 @@
                   <div class="baseline">
                     <div class="description">
                       <%= project.description %>
+                      <% project.domains.each do |domain| %>
+                        <%= domain.name %>
+                        <% domain.skills.each do |skill| %>
+                          <%= skill.name %>
+                        <% end %>
+                      <% end %>
                     </div>
                     <div class="picture_container">
                       <img src="<%= project.picture %>" alt="">
