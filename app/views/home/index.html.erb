@@ -64,7 +64,20 @@
       </section>
       <section id="contact">
         <div class="container">
-          
+          <%= form_for @chapter, url: {action: :create_offer} do |f| %>
+            <%= f.label :title %>
+            <%= f.text_field :title %>
+            <br><br>
+            <%= f.label :entreprise %>
+            <%= f.text_field :entreprise %>
+            <br><br>
+            <%= f.label :url %>
+            <%= f.text_field :url %>
+            <br><br>
+            <%= f.label :body %>
+            <%= f.text_field :body %>
+            <br><br>
+          <% end %>
         </div>
       </section>
     </div>
