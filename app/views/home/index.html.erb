@@ -31,10 +31,7 @@
               <% @projects.each do |project| %>
                 <div class="project" style="background-color: #<%= project.color %>">
                   <div class="headline">
-                    <h2><%= project.name %></h2>
-                    <% unless project.url.blank? %>
-                      <a href="<%= project.url %>">Online version</a>
-                    <% end %>
+                    <a href="<%= project.url %>"><h2><%= project.name %></h2></a>
                   </div>
                   <div class="baseline">
                     <div class="description">
