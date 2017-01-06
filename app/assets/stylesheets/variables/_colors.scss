@@ -1,3 +1,4 @@
 $black: #484C55;
 $white: #F8F8F8;
-$project_color: #aaa;
+$darker_white: darken($white, 10%);
+$lighter_black: lighten($black, 10%);

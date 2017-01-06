@@ -16,7 +16,6 @@
 					padding: 28px;
 					width: 100%;
 					height: 100%;
-					background-color: $project_color;
 					@include flex-direction(column);
 					.headline {
 						@include display(flex);

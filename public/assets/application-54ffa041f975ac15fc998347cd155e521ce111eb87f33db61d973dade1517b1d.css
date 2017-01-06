@@ -136,7 +136,7 @@ img {
   /* line 1, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/micro/_navigation.scss */
   nav {
     height: 100%;
-    width: 200px;
+    width: 125px;
     display: inline-flex;
   }
   /* line 5, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/micro/_navigation.scss */
@@ -145,25 +145,25 @@ img {
     list-style-type: none;
     margin: 0;
     padding: 20px 0;
-    width: 200px;
-    background-color: #f1f1f1;
+    width: 125px;
+    background-color: #dfdfdf;
   }
   /* line 12, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/micro/_navigation.scss */
   nav ul li a {
     display: block;
-    color: #000;
+    color: #484C55;
     padding: 8px 16px;
     text-decoration: none;
   }
   /* line 17, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/micro/_navigation.scss */
   nav ul li a:hover {
-    background-color: #555;
-    color: white;
+    background-color: #484C55;
+    color: #F8F8F8;
   }
   /* line 21, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/micro/_navigation.scss */
   nav ul li a.active {
-    background-color: #555;
-    color: white;
+    background-color: #484C55;
+    color: #F8F8F8;
   }
 
   /* line 1, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/pages/_home.scss */
@@ -207,7 +207,6 @@ img {
     padding: 28px;
     width: 100%;
     height: 100%;
-    background-color: #aaa;
     -webkit-box-orient: vertical;
     -moz-box-orient: vertical;
     box-orient: vertical;
@@ -219,7 +218,7 @@ img {
     flex-direction: column;
     -ms-flex-direction: column;
   }
-  /* line 21, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/pages/_projects.scss */
+  /* line 20, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/pages/_projects.scss */
   #projects .container .projects_container .projects .project .headline {
     display: -webkit-box;
     display: -moz-box;
@@ -249,7 +248,7 @@ img {
     -ms-flex-direction: row;
     margin-bottom: 28px;
   }
-  /* line 27, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/pages/_projects.scss */
+  /* line 26, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/pages/_projects.scss */
   #projects .container .projects_container .projects .project .baseline {
     display: -webkit-box;
     display: -moz-box;
@@ -278,7 +277,7 @@ img {
     flex-direction: row;
     -ms-flex-direction: row;
   }
-  /* line 31, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/pages/_projects.scss */
+  /* line 30, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/pages/_projects.scss */
   #projects .container .projects_container .projects .project .baseline .picture_container {
     margin-left: 28px;
   }
