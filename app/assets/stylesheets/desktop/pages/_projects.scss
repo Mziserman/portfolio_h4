@@ -33,14 +33,14 @@
 						}
 					}
 					.next {
-						@include triangle(21px, gray, right);
+						@include triangle(30px, $black, right);
 						position: absolute;
 						top: 50%;
 						right: 10px;
 						cursor: pointer;
 					}
 					.previous {
-						@include triangle(21px, gray, left);
+						@include triangle(30px, $black, left);
 						position: absolute;
 						top: 50%;
 						left: 10px;
