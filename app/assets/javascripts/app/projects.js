@@ -44,14 +44,12 @@ class Projects {
 	}
 
 	bindEvents() {
-		console.log(this.$next)
 		this.$next.on('click.projects', function(e) {
-			console.log("next")
 			this.nextProject();
-		})
+		}.bind(this))
 		this.$previous.on('click.projects', function(e) {
 			this.previousProject();
-		})
+		}.bind(this))
 		$(document).on('keyup.projects', function(e) {
 			if (e.keyCode == 37) {
 				this.previousProject();
