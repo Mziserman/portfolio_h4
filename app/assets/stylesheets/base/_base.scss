@@ -1,6 +1,7 @@
 $modular-scale-base: 0.75em;
 * {
 	box-sizing: border-box;
+	line-height: 21px;
 }
 body, html {
 	@include display(flex);
