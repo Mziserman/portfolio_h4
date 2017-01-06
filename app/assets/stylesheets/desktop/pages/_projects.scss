@@ -38,6 +38,7 @@
 						position: absolute;
 						top: 50%;
 						right: 10px;
+						cursor: pointer;
 					}
 					&:before {
 						content: "";
@@ -45,6 +46,7 @@
 						position: absolute;
 						top: 50%;
 						left: 10px;
+						cursor: pointer;
 					}
 				}
 			}
