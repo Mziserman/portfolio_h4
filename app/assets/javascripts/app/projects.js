@@ -44,7 +44,9 @@ class Projects {
 	}
 
 	bindEvents() {
+		console.log(this.$next)
 		this.$next.on('click.projects', function(e) {
+			console.log("next")
 			this.nextProject();
 		})
 		this.$previous.on('click.projects', function(e) {

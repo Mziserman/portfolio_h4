@@ -754,10 +754,8 @@ class Portfolio {
 		}.bind(this));
 
 		$(window).resize(_.debounce(function(e) {
-			console.log(this.sectionReferences);
-			_.each(this.sectionReferences, function(key, value) {
-				console.log(value);
-				// value.reference.onResize();
+			_.each(this.sectionReferences, function(value, key) {
+				value.reference.onResize();
 			})
 		}.bind(this), 200));
 	}
@@ -942,11 +940,21 @@ class Projects {
 	bindElements() {
 		this.$projectsPageContainer = $('#projects');
 		this.$projectsContainer = this.$projectsPageContainer.find('.projects');
+		this.$next = this.$projectsPageContainer.find('.next');
+		this.$previous = this.$projectsPageContainer.find('.previous');
 		this.$projects = this.$projectsContainer.find('.project');
 		this.$menu = $('nav .projects');
 	}
 
 	bindEvents() {
+		console.log(this.$next)
+		this.$next.on('click.projects', function(e) {
+			console.log("next")
+			this.nextProject();
+		})
+		this.$previous.on('click.projects', function(e) {
+			this.previousProject();
+		})
 		$(document).on('keyup.projects', function(e) {
 			if (e.keyCode == 37) {
 				this.previousProject();
