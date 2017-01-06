@@ -32,17 +32,15 @@
 							margin-left: 28px;
 						}
 					}
-					&:after {
-						content: "";
-						@include triangle(12px, gray, right);
+					.after {
+						@include triangle(21px, gray, right);
 						position: absolute;
 						top: 50%;
 						right: 10px;
 						cursor: pointer;
 					}
-					&:before {
-						content: "";
-						@include triangle(12px, gray, left);
+					.before {
+						@include triangle(21px, gray, left);
 						position: absolute;
 						top: 50%;
 						left: 10px;

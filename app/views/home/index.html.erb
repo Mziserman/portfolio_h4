@@ -29,6 +29,7 @@
             <div class="projects">
               <% @projects.each do |project| %>
                 <div class="project" style="background-color: #<%= project.color %>">
+                  <span class="before"></span>
                   <div class="headline">
                     <a href="<%= project.url %>"><h2><%= project.name %></h2></a>
                   </div>
@@ -56,6 +57,7 @@
                       <%= image_tag(project.picture) %>
                     </div>
                   </div>
+                  <span class="after"></span>
                 </div>
               <% end %>
             </div>
