@@ -68,29 +68,35 @@ body, html {
   height: 100%;
   width: 100%;
   font-family: "Reem Kufi", sans-serif;
-  font-size: 0.9331em;
+  font-size: 0.99975em;
   background-color: #F8F8F8;
 }
 
 /* line 14, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/base/_base.scss */
 h1 {
   font-family: "Questrial", sans-serif;
-  font-size: 2.21013em;
+  font-size: 3.15655em;
 }
 
 /* line 18, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/base/_base.scss */
 h2 {
   font-family: "Questrial", sans-serif;
-  font-size: 1.65802em;
+  font-size: 2.368em;
 }
 
 /* line 22, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/base/_base.scss */
 h3 {
   font-family: "Questrial", sans-serif;
-  font-size: 1.24382em;
+  font-size: 1.77644em;
 }
 
-/* line 27, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/base/_base.scss */
+/* line 26, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/base/_base.scss */
+h4 {
+  font-family: "Questrial", sans-serif;
+  font-size: 1.33267em;
+}
+
+/* line 31, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/base/_base.scss */
 img {
   display: block;
   width: auto;
@@ -130,7 +136,7 @@ img {
   /* line 1, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/micro/_navigation.scss */
   nav {
     height: 100%;
-    width: 200px;
+    width: 125px;
     display: inline-flex;
   }
   /* line 5, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/micro/_navigation.scss */
@@ -139,7 +145,7 @@ img {
     list-style-type: none;
     margin: 0;
     padding: 20px 0;
-    width: 200px;
+    width: 125px;
     background-color: #f1f1f1;
   }
   /* line 12, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/micro/_navigation.scss */
@@ -152,12 +158,12 @@ img {
   /* line 17, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/micro/_navigation.scss */
   nav ul li a:hover {
     background-color: #555;
-    color: white;
+    color: #F8F8F8;
   }
   /* line 21, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/micro/_navigation.scss */
   nav ul li a.active {
     background-color: #555;
-    color: white;
+    color: #F8F8F8;
   }
 
   /* line 1, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/pages/_home.scss */
