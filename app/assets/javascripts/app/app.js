@@ -40,9 +40,9 @@ class Portfolio {
 
 		$(window).resize(_.debounce(function(e) {
 			console.log(this.sectionReferences);
-			_.each(this.sectionReferences, function(key, value) {
-				console.log(value);
-				// value.reference.onResize();
+			_.each(this.sectionReferences, function(value, key) {
+				// console.log(value);
+				value.reference.onResize();
 			})
 		}.bind(this), 200));
 	}

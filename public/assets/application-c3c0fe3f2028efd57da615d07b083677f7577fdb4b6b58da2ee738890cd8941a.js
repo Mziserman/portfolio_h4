@@ -754,14 +754,11 @@ class Portfolio {
 		}.bind(this));
 
 		$(window).resize(_.debounce(function(e) {
-			_.each(this.sectionReferences, function(key, value) {
-				console.log(value)
-				console.log(key)
+			console.log(this.sectionReferences);
+			_.each(this.sectionReferences, function(value, key) {
+				// console.log(value);
+				value.reference.onResize();
 			})
-			this.sectionReferences["home"].reference.onResize();
-			this.sectionReferences["projects"].reference.onResize();
-			this.sectionReferences["skills"].reference.onResize();
-			this.sectionReferences["contact"].reference.onResize();
 		}.bind(this), 200));
 	}
 
