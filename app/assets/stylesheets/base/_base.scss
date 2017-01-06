@@ -1,7 +1,6 @@
 $modular-scale-base: 0.75em;
 * {
 	box-sizing: border-box;
-	line-height: 21px;
 }
 body, html {
 	@include display(flex);
@@ -9,7 +8,7 @@ body, html {
 	width: 100%;
 	font-family: $base-font;
 	font-size: modular-scale(1);
-
+	line-height: 21px;
 	background-color: $white;
 }
 h1 {
