@@ -36,14 +36,14 @@
 						@include triangle(30px, $black, right);
 						position: absolute;
 						top: 50%;
-						right: -10px;
+						right: 4px;
 						cursor: pointer;
 					}
 					.previous {
 						@include triangle(30px, $black, left);
 						position: absolute;
 						top: 50%;
-						left: -10px;
+						left: 4px;
 						cursor: pointer;
 					}
 				}
