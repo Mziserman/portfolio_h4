@@ -12,6 +12,7 @@
 				left: 0;
 				height: 100%;
 				.project {
+					position: relative;
 					@include display(flex);
 					padding: 28px;
 					width: 100%;
@@ -34,16 +35,10 @@
 					&:after {
 						content: "";
 						@include triangle(12px, gray, right);
-						@include display(flex);
-						@include align-items(center);
-						@include align-self(flex-end);
 					}
 					&:before {
 						content: "";
 						@include triangle(12px, gray, left);
-						@include display(flex);
-						@include align-items(center);
-						@include align-self(flex-start);
 					}
 				}
 			}
