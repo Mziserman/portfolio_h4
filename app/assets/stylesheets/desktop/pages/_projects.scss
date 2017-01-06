@@ -32,14 +32,14 @@
 							margin-left: 28px;
 						}
 					}
-					.after {
+					.next {
 						@include triangle(21px, gray, right);
 						position: absolute;
 						top: 50%;
 						right: 10px;
 						cursor: pointer;
 					}
-					.before {
+					.previous {
 						@include triangle(21px, gray, left);
 						position: absolute;
 						top: 50%;
