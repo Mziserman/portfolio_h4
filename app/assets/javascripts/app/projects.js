@@ -37,11 +37,19 @@ class Projects {
 	bindElements() {
 		this.$projectsPageContainer = $('#projects');
 		this.$projectsContainer = this.$projectsPageContainer.find('.projects');
+		this.$next = this.$projectsPageContainer.find('.next');
+		this.$previous = this.$projectsPageContainer.find('.previous');
 		this.$projects = this.$projectsContainer.find('.project');
 		this.$menu = $('nav .projects');
 	}
 
 	bindEvents() {
+		this.$next.on('click.projects', function(e) {
+			this.nextProject();
+		})
+		this.$previous.on('click.projects', function(e) {
+			this.previousProject();
+		})
 		$(document).on('keyup.projects', function(e) {
 			if (e.keyCode == 37) {
 				this.previousProject();
