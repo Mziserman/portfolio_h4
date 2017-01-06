@@ -16,6 +16,7 @@ class Projects {
 		this.$menu.addClass('active');
 		this.bindEvents();
 		this.goTo(0);
+		this.resizePictureContainer();
 	}
 
 	onResize() {
