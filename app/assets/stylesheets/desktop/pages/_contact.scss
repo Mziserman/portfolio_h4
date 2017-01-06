@@ -2,6 +2,7 @@
 	.container {
 		@include display(flex);
 		.new_offer {
+			width: 100%;
 			input {
 				width: 100%;
 				padding: 12px 20px;

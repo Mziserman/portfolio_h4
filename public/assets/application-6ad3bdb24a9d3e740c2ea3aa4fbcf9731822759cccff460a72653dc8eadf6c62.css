@@ -283,29 +283,48 @@ img {
     margin-left: 28px;
   }
   /* line 35, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/pages/_projects.scss */
-  #projects .container .projects_container .projects .project:after {
-    content: "";
+  #projects .container .projects_container .projects .project .next {
     height: 0;
     width: 0;
-    border-bottom: 6px solid transparent;
-    border-left: 6px solid gray;
-    border-top: 6px solid transparent;
+    border-bottom: 10.5px solid transparent;
+    border-left: 10.5px solid gray;
+    border-top: 10.5px solid transparent;
     position: absolute;
     top: 50%;
     right: 10px;
     cursor: pointer;
   }
-  /* line 43, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/pages/_projects.scss */
-  #projects .container .projects_container .projects .project:before {
-    content: "";
+  /* line 42, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/pages/_projects.scss */
+  #projects .container .projects_container .projects .project .previous {
     height: 0;
     width: 0;
-    border-bottom: 6px solid transparent;
-    border-right: 6px solid gray;
-    border-top: 6px solid transparent;
+    border-bottom: 10.5px solid transparent;
+    border-right: 10.5px solid gray;
+    border-top: 10.5px solid transparent;
     position: absolute;
     top: 50%;
     left: 10px;
     cursor: pointer;
+  }
+
+  /* line 2, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/pages/_contact.scss */
+  #contact .container {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  /* line 4, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/pages/_contact.scss */
+  #contact .container .new_offer {
+    width: 100%;
+  }
+  /* line 6, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/pages/_contact.scss */
+  #contact .container .new_offer input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
   }
 }
