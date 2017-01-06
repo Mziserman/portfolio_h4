@@ -38,14 +38,11 @@
                       <h3>Description</h3>
                       <br>
                       <%= project.description %>
-                      <br>
-                      <br>
+
                       <br>
                       <h3>Skill used</h3>
                       <% project.domains.each do |domain| %>
-                        <br>
                         <h4><%= domain.name %></h4>
-                        <br>
                         <% domain.skills.each do |skill| %>
                           <% if project.skills.include? skill %>
                             <%= skill.name %> <br>
