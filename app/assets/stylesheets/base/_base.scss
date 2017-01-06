@@ -14,18 +14,22 @@ body, html {
 h1 {
 	font-family: $title-font;
 	font-size: modular-scale(5);
+	line-height: 50px;
 }
 h2 {
 	font-family: $title-font;
 	font-size: modular-scale(4);
+	line-height: 40px;
 }
 h3 {
 	font-family: $title-font;
 	font-size: modular-scale(3);
+	line-height: 30px;
 }
 h4 {
 	font-family: $title-font;
 	font-size: modular-scale(2);
+	line-height: 25px;
 }
 
 img {
