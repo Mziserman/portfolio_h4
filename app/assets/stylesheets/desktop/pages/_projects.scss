@@ -31,6 +31,14 @@
 							margin-left: 28px;
 						}
 					}
+					&:after {
+						content: "";
+						@include triangle(12px, gray, right);
+					}
+					&:before {
+						content: "";
+						@include triangle(12px, gray, left);
+					}
 				}
 			}
 		}
