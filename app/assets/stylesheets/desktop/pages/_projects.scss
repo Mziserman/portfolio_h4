@@ -4,14 +4,14 @@
 			@include triangle(24px, $black, right);
 			position: absolute;
 			top: 50%;
-			right: 5px;
+			right: 6px;
 			cursor: pointer;
 		}
 		.previous {
 			@include triangle(24px, $black, left);
 			position: absolute;
 			top: 50%;
-			left: 5px;
+			left: 6px;
 			cursor: pointer;
 		}
 		.projects_container {
