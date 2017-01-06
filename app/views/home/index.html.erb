@@ -47,7 +47,9 @@
                         <h4><%= domain.name %></h4>
                         <br>
                         <% domain.skills.each do |skill| %>
-                          <%= skill.name %> <br>
+                          <% if project.skills.include? skill %>
+                            <%= skill.name %> <br>
+                          <% end %>
                         <% end %>
                       <% end %>
                     </div>
