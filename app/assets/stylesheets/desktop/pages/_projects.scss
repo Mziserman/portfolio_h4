@@ -1,5 +1,19 @@
 #projects {
 	.container {
+		.next {
+			@include triangle(24px, $black, right);
+			position: absolute;
+			top: 50%;
+			right: 5px;
+			cursor: pointer;
+		}
+		.previous {
+			@include triangle(24px, $black, left);
+			position: absolute;
+			top: 50%;
+			left: 5px;
+			cursor: pointer;
+		}
 		.projects_container {
 			position: relative;
 			overflow: hidden;
@@ -31,20 +45,6 @@
 						.picture_container {
 							margin-left: 28px;
 						}
-					}
-					.next {
-						@include triangle(24px, $black, right);
-						position: absolute;
-						top: 50%;
-						right: 5px;
-						cursor: pointer;
-					}
-					.previous {
-						@include triangle(24px, $black, left);
-						position: absolute;
-						top: 50%;
-						left: 5px;
-						cursor: pointer;
 					}
 				}
 			}

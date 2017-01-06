@@ -25,11 +25,11 @@
       </section>
       <section id="projects">
         <div class="container">
+          <span class="previous"></span>
           <div class="projects_container">
             <div class="projects">
               <% @projects.each do |project| %>
                 <div class="project" style="background-color: #<%= project.color %>">
-                  <span class="previous"></span>
                   <div class="headline">
                     <a href="<%= project.url %>"><h2><%= project.name %></h2></a>
                   </div>
@@ -57,11 +57,11 @@
                       <%= image_tag(project.picture) %>
                     </div>
                   </div>
-                  <span class="next"></span>
                 </div>
               <% end %>
             </div>
           </div>
+          <span class="next"></span>
         </div>
       </section>
       <section id="contact">
