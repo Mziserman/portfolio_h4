@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
   namespace :admin do
     resources :users
-resources :domains
-resources :projects
-resources :skills
-
+    resources :domains
+    resources :projects
+    resources :skills
     root to: "users#index"
   end
 
@@ -16,6 +15,7 @@ resources :skills
   end
 
   get 'home/index'
+  post '/create_offer' => 'home#create_offer'
 
   root controller: :home, action: :index
 end
