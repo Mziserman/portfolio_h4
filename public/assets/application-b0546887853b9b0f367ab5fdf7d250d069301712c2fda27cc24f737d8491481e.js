@@ -754,7 +754,7 @@ class Portfolio {
 		}.bind(this));
 
 		$(window).resize(_.debounce(function(e) {
-			_.each(this.sectionReferences, function(key, value) {
+			_.each(this.sectionReferences, function(value, key) {
 				value.reference.onResize();
 			})
 		}.bind(this), 200));
