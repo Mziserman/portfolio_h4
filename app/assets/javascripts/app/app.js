@@ -19,12 +19,8 @@ class Portfolio {
 				position: "-100vh",
 				reference: new Projects()
 			},
-			"skills": {
-				position: "-200vh",
-				reference: new Skills()
-			},
 			"contact": {
-				position: "-300vh",
+				position: "-200vh",
 				reference: new Contact()
 			}
 		}
@@ -43,6 +39,10 @@ class Portfolio {
 		}.bind(this));
 
 		$(window).resize(_.debounce(function(e) {
+			_.each(this.sectionReferences, function(key, value) {
+				console.log(value)
+				console.log(key)
+			})
 			this.sectionReferences["home"].reference.onResize();
 			this.sectionReferences["projects"].reference.onResize();
 			this.sectionReferences["skills"].reference.onResize();

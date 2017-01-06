@@ -734,12 +734,8 @@ class Portfolio {
 				position: "-100vh",
 				reference: new Projects()
 			},
-			"skills": {
-				position: "-200vh",
-				reference: new Skills()
-			},
 			"contact": {
-				position: "-300vh",
+				position: "-200vh",
 				reference: new Contact()
 			}
 		}
@@ -758,7 +754,14 @@ class Portfolio {
 		}.bind(this));
 
 		$(window).resize(_.debounce(function(e) {
-			this.currentScreen.reference.onResize();	
+			_.each(this.sectionReferences, function(key, value) {
+				console.log(value)
+				console.log(key)
+			})
+			this.sectionReferences["home"].reference.onResize();
+			this.sectionReferences["projects"].reference.onResize();
+			this.sectionReferences["skills"].reference.onResize();
+			this.sectionReferences["contact"].reference.onResize();
 		}.bind(this), 200));
 	}
 
@@ -778,7 +781,23 @@ class Portfolio {
 
 class Contact {
 	constructor() {
+		this.bindElements()
+	}
+	onStop() {
+		this.$menu.removeClass('active');
+	}
 
+	onStart() {
+		this.$menu.addClass('active');
+	}
+
+	onResize() {
+
+	}
+
+	bindElements() {
+		this.$contact = $('#contact');
+		this.$menu = $('nav .contact')
 	}
 }
 ;
@@ -805,7 +824,7 @@ class Home {
 	onResize() {
 		this.$home.find('canvas').remove();
 		this.setupParameters();
-		this.onStart();
+		this.p5 = new p5(this.perlinCircle.bind(this), "home");
 	}
 
 	bindElements() {
@@ -893,6 +912,7 @@ class Projects {
 	constructor() {
 		this.bindElements();
 		this.$projectsContainer.css('width', this.$projects.length * 100 + "%");
+		this.currentDisplay = 'block';
 	}
 
 	onStop() {
@@ -904,6 +924,22 @@ class Projects {
 		this.$menu.addClass('active');
 		this.bindEvents();
 		this.goTo(0);
+		this.resizePictureContainer();
+	}
+
+	onResize() {
+		this.resizePictureContainer();
+	}
+
+	resizePictureContainer() {
+		var $picture_container = this.$projects.find('.picture_container');
+		if (this.currentDisplay == 'inline') {
+			$picture_container.css('display', 'block');
+			this.currentDisplay = 'block';
+		} else {
+			$picture_container.css('display', 'inline');
+			this.currentDisplay = 'inline';
+		}
 	}
 
 	bindElements() {
@@ -948,14 +984,6 @@ class Projects {
 		this.$projectsContainer.css('left', position + "%");
 		this.currentProject = projectPosition;
 	} 
-}
-;
-"use strict";
-
-class Skills {
-	constructor() {
-
-	}
 }
 ;
 (function() {

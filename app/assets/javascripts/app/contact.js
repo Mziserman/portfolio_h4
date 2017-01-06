@@ -17,7 +17,7 @@ class Contact {
 	}
 
 	bindElements() {
-		this.$home = $('#contact');
+		this.$contact = $('#contact');
 		this.$menu = $('nav .contact')
 	}
 }
