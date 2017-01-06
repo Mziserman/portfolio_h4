@@ -197,6 +197,7 @@ img {
   }
   /* line 14, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/pages/_projects.scss */
   #projects .container .projects_container .projects .project {
+    position: relative;
     display: -webkit-box;
     display: -moz-box;
     display: box;
@@ -218,7 +219,7 @@ img {
     flex-direction: column;
     -ms-flex-direction: column;
   }
-  /* line 20, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/pages/_projects.scss */
+  /* line 21, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/pages/_projects.scss */
   #projects .container .projects_container .projects .project .headline {
     display: -webkit-box;
     display: -moz-box;
@@ -248,7 +249,7 @@ img {
     -ms-flex-direction: row;
     margin-bottom: 28px;
   }
-  /* line 26, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/pages/_projects.scss */
+  /* line 27, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/pages/_projects.scss */
   #projects .container .projects_container .projects .project .baseline {
     display: -webkit-box;
     display: -moz-box;
@@ -277,8 +278,32 @@ img {
     flex-direction: row;
     -ms-flex-direction: row;
   }
-  /* line 30, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/pages/_projects.scss */
+  /* line 31, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/pages/_projects.scss */
   #projects .container .projects_container .projects .project .baseline .picture_container {
     margin-left: 28px;
+  }
+  /* line 35, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/pages/_projects.scss */
+  #projects .container .projects_container .projects .project:after {
+    content: "";
+    height: 0;
+    width: 0;
+    border-bottom: 6px solid transparent;
+    border-left: 6px solid gray;
+    border-top: 6px solid transparent;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+  }
+  /* line 42, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/pages/_projects.scss */
+  #projects .container .projects_container .projects .project:before {
+    content: "";
+    height: 0;
+    width: 0;
+    border-bottom: 6px solid transparent;
+    border-right: 6px solid gray;
+    border-top: 6px solid transparent;
+    position: absolute;
+    top: 50%;
+    left: 10px;
   }
 }

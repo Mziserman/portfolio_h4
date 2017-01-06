@@ -35,10 +35,16 @@
 					&:after {
 						content: "";
 						@include triangle(12px, gray, right);
+						position: absolute;
+						top: 50%;
+						right: 10px;
 					}
 					&:before {
 						content: "";
 						@include triangle(12px, gray, left);
+						position: absolute;
+						top: 50%;
+						left: 10px;
 					}
 				}
 			}
