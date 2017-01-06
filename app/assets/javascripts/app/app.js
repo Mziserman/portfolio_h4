@@ -40,13 +40,8 @@ class Portfolio {
 
 		$(window).resize(_.debounce(function(e) {
 			_.each(this.sectionReferences, function(key, value) {
-				console.log(value)
-				console.log(key)
+				value.reference.onResize();
 			})
-			this.sectionReferences["home"].reference.onResize();
-			this.sectionReferences["projects"].reference.onResize();
-			this.sectionReferences["skills"].reference.onResize();
-			this.sectionReferences["contact"].reference.onResize();
 		}.bind(this), 200));
 	}
 

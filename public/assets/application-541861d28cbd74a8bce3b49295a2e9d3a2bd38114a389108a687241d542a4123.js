@@ -734,12 +734,8 @@ class Portfolio {
 				position: "-100vh",
 				reference: new Projects()
 			},
-			"skills": {
-				position: "-200vh",
-				reference: new Skills()
-			},
 			"contact": {
-				position: "-300vh",
+				position: "-200vh",
 				reference: new Contact()
 			}
 		}
@@ -758,10 +754,9 @@ class Portfolio {
 		}.bind(this));
 
 		$(window).resize(_.debounce(function(e) {
-			this.sectionReferences["home"].reference.onResize();
-			this.sectionReferences["projects"].reference.onResize();
-			this.sectionReferences["skills"].reference.onResize();
-			this.sectionReferences["contact"].reference.onResize();
+			_.each(this.sectionReferences, function(key, value) {
+				value.reference.onResize();
+			})
 		}.bind(this), 200));
 	}
 
@@ -796,7 +791,7 @@ class Contact {
 	}
 
 	bindElements() {
-		this.$home = $('#contact');
+		this.$contact = $('#contact');
 		this.$menu = $('nav .contact')
 	}
 }
@@ -824,7 +819,7 @@ class Home {
 	onResize() {
 		this.$home.find('canvas').remove();
 		this.setupParameters();
-		this.onStart();
+		this.p5 = new p5(this.perlinCircle.bind(this), "home");
 	}
 
 	bindElements() {
@@ -924,6 +919,7 @@ class Projects {
 		this.$menu.addClass('active');
 		this.bindEvents();
 		this.goTo(0);
+		this.resizePictureContainer();
 	}
 
 	onResize() {
@@ -983,30 +979,6 @@ class Projects {
 		this.$projectsContainer.css('left', position + "%");
 		this.currentProject = projectPosition;
 	} 
-}
-;
-"use strict";
-
-class Skills {
-	constructor() {
-		this.bindElements()
-	}
-	onStop() {
-		this.$menu.removeClass('active');
-	}
-
-	onStart() {
-		this.$menu.addClass('active');
-	}
-
-	onResize() {
-
-	}
-
-	bindElements() {
-		this.$home = $('#skills');
-		this.$menu = $('nav .skills')
-	}
 }
 ;
 (function() {
