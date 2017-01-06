@@ -8,18 +8,18 @@ nav {
 	    margin: 0;
 	    padding: 20px 0;
 	    width: 125px;
-	    background-color: #f1f1f1;
+	    background-color: $white;
 	    li a {
 		    display: block;
-		    color: #000;
+		    color: $black;
 		    padding: 8px 16px;
 		    text-decoration: none;
 		    &:hover {
-			    background-color: #555;
+			    background-color: $black;
 			    color: $white;
 			}
 			&.active {
-			    background-color: #555;
+			    background-color: $black;
 			    color: $white;
 			}
 		}
