@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Martin Ziserman</title>
-  <link href="https://fonts.googleapis.com/css?family=Questrial|Reem+Kufi" rel="stylesheet">
 </head>
 <body>
   <nav>
@@ -17,6 +16,9 @@
     <div class="wrapper">
       <section id="home">
         <div class="container">
+          <% flash.each do |key, value| %>
+            <div class="alert alert-<%= key %>"><%= value %></div>
+          <% end %>
           <h1>
             Martin Ziserman
           </h1>
