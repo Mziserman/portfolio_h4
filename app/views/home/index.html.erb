@@ -31,7 +31,8 @@
               <% @projects.each do |project| %>
                 <div class="project" style="background-color: #<%= project.color %>">
                   <div class="headline">
-                    <a href="<%= project.url %>"><h2><%= project.name %></h2></a>
+                    <h2><%= project.name %></h2>
+                    <a href="<%= project.url %>">View the project</a>
                   </div>
                   <div class="baseline">
                     <div class="description">
