@@ -227,25 +227,9 @@ a {
     width: 100%;
     height: 80%;
     position: relative;
-    overflow: hidden;
-    -webkit-box-align: center;
-    -moz-box-align: center;
-    box-align: center;
-    -webkit-align-items: center;
-    -moz-align-items: center;
-    -ms-align-items: center;
-    -o-align-items: center;
-    align-items: center;
-    -ms-flex-align: center;
-    display: -webkit-box;
-    display: -moz-box;
-    display: box;
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flexbox;
-    display: flex;
+    overflow: scroll;
   }
-  /* line 9, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/pages/_projects.scss */
+  /* line 7, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/pages/_projects.scss */
   #projects .projects {
     position: absolute;
     margin-top: 14px;
@@ -281,7 +265,7 @@ a {
     left: 0;
     width: 100%;
   }
-  /* line 19, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/pages/_projects.scss */
+  /* line 17, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/pages/_projects.scss */
   #projects .projects .project {
     position: relative;
     display: -webkit-box;
@@ -309,27 +293,34 @@ a {
     -ms-flex-direction: column;
     color: #d2d2d2;
   }
-  /* line 31, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/pages/_projects.scss */
+  /* line 29, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/pages/_projects.scss */
   #projects .projects .project:hover {
     color: #F8F8F8;
   }
-  /* line 35, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/pages/_projects.scss */
+  /* line 33, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/pages/_projects.scss */
   #projects .projects .project:hover a {
     color: #F8F8F8;
   }
-  /* line 39, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/pages/_projects.scss */
+  /* line 37, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/pages/_projects.scss */
   #projects .projects .project:last-child {
     border-bottom: 1px solid white;
   }
-  /* line 43, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/pages/_projects.scss */
+  /* line 41, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/pages/_projects.scss */
   #projects .projects .project.active {
     color: #F8F8F8;
+    -webkit-transition: max-height 1s cubic-bezier(0, 1, 0, 1);
+    -moz-transition: max-height 1s cubic-bezier(0, 1, 0, 1);
+    transition: max-height 1s cubic-bezier(0, 1, 0, 1);
+    max-height: 1000px;
   }
   /* line 45, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/pages/_projects.scss */
   #projects .projects .project.active .baseline {
     max-height: 1000px;
+    -webkit-transition: max-height 1s ease;
+    -moz-transition: max-height 1s ease;
+    transition: max-height 1s ease;
   }
-  /* line 50, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/pages/_projects.scss */
+  /* line 51, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/pages/_projects.scss */
   #projects .projects .project .headline {
     display: -webkit-box;
     display: -moz-box;
@@ -358,7 +349,7 @@ a {
     flex-direction: row;
     -ms-flex-direction: row;
   }
-  /* line 56, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/pages/_projects.scss */
+  /* line 57, /Users/ziserman/work/h4/portfolio/app/assets/stylesheets/desktop/pages/_projects.scss */
   #projects .projects .project .baseline {
     display: -webkit-box;
     display: -moz-box;
@@ -386,9 +377,9 @@ a {
     -moz-flex-direction: row;
     flex-direction: row;
     -ms-flex-direction: row;
-    -webkit-transition: max-height 1s ease;
-    -moz-transition: max-height 1s ease;
-    transition: max-height 1s ease;
+    -webkit-transition: max-height 1s cubic-bezier(0, 1, 0, 1);
+    -moz-transition: max-height 1s cubic-bezier(0, 1, 0, 1);
+    transition: max-height 1s cubic-bezier(0, 1, 0, 1);
     max-height: 0px;
     overflow: hidden;
   }

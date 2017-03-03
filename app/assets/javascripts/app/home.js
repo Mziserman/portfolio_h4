@@ -36,12 +36,9 @@ class Home {
 		this.$projects.click(function(e) {
 			if ($(e.currentTarget).hasClass('active')) {
 				this.$projects.removeClass('active');
-				this.$projects.removeClass('inactive');
 			} else {
-				this.$projects.not($(e.currentTarget)).addClass('inactive')
 				this.$projects.removeClass('active')
 				$(e.currentTarget).addClass('active');	
-				$(e.currentTarget).removeClass('inactive');	
 			}
 			
 			
