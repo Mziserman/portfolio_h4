@@ -34,7 +34,7 @@ class Home {
 
 	bindEvents() {
 		this.$projects.click(function(e) {
-			console.log()
+			console.log(e)
 			$(e.target).parent('.project').toggleClass('active');
 		})
 	}
