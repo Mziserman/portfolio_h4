@@ -2,3 +2,5 @@ $black: #484C55;
 $white: #F8F8F8;
 $darker_white: darken($white, 1%);
 $lighter_black: lighten($black, 1%);
+$darkest_white: darken($white, 15%);
+$lightest_black: lighten($black, 15%);

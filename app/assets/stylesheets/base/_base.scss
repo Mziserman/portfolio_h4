@@ -20,11 +20,17 @@ h2 {
 	font-family: $title-font;
 	font-size: modular-scale(4);
 	line-height: 40px;
+	a {
+		line-height: 50px;
+	}
 }
 h3 {
 	font-family: $title-font;
 	font-size: modular-scale(3);
 	line-height: 30px;
+	a {
+		line-height: 40px;
+	}
 }
 h4 {
 	font-family: $title-font;
@@ -36,4 +42,8 @@ img {
 	display: block;
 	width: auto;
 	height: 100%;
+}
+
+a {
+	color: $white;
 }

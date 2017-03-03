@@ -1,4 +1,10 @@
 #home {
 	background-color: black;
-	color: white;
+	color: $white;
+}
+.row {
+	@include display(flex);
+	@include flex-direction(row);
+	@include justify-content(space-between);
+	height: 10%;
 }

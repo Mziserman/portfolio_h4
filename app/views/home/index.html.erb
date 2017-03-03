@@ -5,13 +5,6 @@
   <title>Martin Ziserman</title>
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><a href="#" class="home" data-target="home">Home</a></li>
-      <li><a href="#" class="projects" data-target="projects">Projects</a></li>
-      <li><a href="#" class="contact" data-target="contact">Contact</a></li>
-    </ul>
-  </nav>
   <div id="main">
     <div class="wrapper">
       <section id="home">
@@ -19,22 +12,22 @@
           <% flash.each do |key, value| %>
             <div class="alert alert-<%= key %>"><%= value %></div>
           <% end %>
-          <h1>
-            Martin Ziserman
-          </h1>
-          <p>Developper</p>
-        </div>
-      </section>
-      <section id="projects">
-        <div class="container">
-          <span class="previous"></span>
-          <div class="projects_container">
+          <div class="row">
+            <h1>
+              Martin Ziserman
+            </h1>
+            <h2><a href="#" data-target="contact">contact</a></h2>
+          </div>
+          <div class="row">
+            <p>Developer</p>
+          </div>
+          <section id="projects">
             <div class="projects">
               <% @projects.each do |project| %>
-                <div class="project" style="background-color: #<%= project.color %>">
+                <panel class="project">
                   <div class="headline">
                     <h2><%= project.name %></h2>
-                    <a href="<%= project.url %>"><h3>View the project</h3></a>
+                    <h3><a href="<%= project.url %>">View the project</a></h3>
                   </div>
                   <div class="baseline">
                     <div class="description">
@@ -55,16 +48,15 @@
                           <% end %>
                         <% end %>
                       <% end %>
-                    </div>
+                    </div><!-- 
                     <div class="picture_container">
                       <%= image_tag(project.picture) %>
                     </div>
-                  </div>
-                </div>
+-->                    </div>
+                </panel>
               <% end %>
             </div>
-          </div>
-          <span class="next"></span>
+          </section>
         </div>
       </section>
       <section id="contact">

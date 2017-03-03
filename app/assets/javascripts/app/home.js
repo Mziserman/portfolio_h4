@@ -16,6 +16,8 @@ class Home {
 		this.out = false;
 		this.p5 = new p5(this.perlinCircle.bind(this), "home");
 		this.$menu.addClass('active');
+		this.bindElements();
+		this.bindEvents();
 	}
 
 	onResize() {
@@ -26,7 +28,15 @@ class Home {
 
 	bindElements() {
 		this.$home = $('#home');
-		this.$menu = $('nav .home')
+		this.$menu = $('nav .home');
+		this.$projects = $('.project');
+	}
+
+	bindEvents() {
+		this.$projects.click(function(e) {
+			console.log()
+			$(e.target).parent('.project').toggleClass('active');
+		})
 	}
 
 	setupParameters() {

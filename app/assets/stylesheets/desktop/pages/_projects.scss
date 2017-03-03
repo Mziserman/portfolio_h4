@@ -1,52 +1,65 @@
 #projects {
-	.container {
-		.next {
-			@include triangle(24px, $black, right);
-			position: absolute;
-			top: 50%;
-			right: 6px;
-			cursor: pointer;
-		}
-		.previous {
-			@include triangle(24px, $black, left);
-			position: absolute;
-			top: 50%;
-			left: 6px;
-			cursor: pointer;
-		}
-		.projects_container {
+	width: 100%;
+	height: 80%;
+	position: relative;
+	overflow: hidden;
+
+	@include align-items(center);
+	@include display(flex);
+	.projects {
+		position: absolute;
+		margin-top: 14px;
+		@include align-items(flex-start);
+		@include display(flex);
+		@include transition(left 0.5s ease);
+		@include flex-direction(column);
+		left: 0;
+		width: 100%;
+
+		.project {
 			position: relative;
-			overflow: hidden;
+			@include display(flex);
+			padding: 14px;
+			display: block;
+			overflow: auto;
+			cursor: pointer;
 			width: 100%;
-			height: 100%;
-			.projects {
-				position: absolute;
-				@include display(flex);
-				@include transition(left 0.5s ease);
-				left: 0;
-				height: 100%;
-				.project {
-					position: relative;
-					@include display(flex);
-					padding: 28px;
-					width: 100%;
-					height: 100%;
-					@include flex-direction(column);
-					.headline {
-						@include display(flex);
-						@include justify-content(space-between);
-						@include flex-direction(row);
-						margin-bottom: 28px;
-					}
-					.baseline {
-						@include display(flex);
-						@include justify-content(space-between);
-						@include flex-direction(row);
-						.picture_container {
-							margin-left: 28px;
-						}
-					}
+			border-top: 1px solid white;
+			@include flex-direction(column);
+			color: $darkest-white;
+
+			&:hover {
+				color: $white;
+			}
+
+			&:hover a {
+				color: $white;
+			}
+
+			&:last-child {
+				border-bottom: 1px solid white;
+			}
+
+			&.active {
+				color: $white;
+				.baseline {
+					max-height: 1000px;
 				}
+			}
+
+			.headline {
+				@include display(flex);
+				@include justify-content(space-between);
+				@include flex-direction(row);
+			}
+
+			.baseline {
+				@include display(flex);
+				@include justify-content(space-between);
+				@include flex-direction(row);
+				@include transition(max-height 1s ease);
+				max-height: 0px;
+				overflow: hidden;
 			}
 		}
 	}

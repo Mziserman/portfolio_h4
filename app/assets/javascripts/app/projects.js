@@ -3,8 +3,8 @@
 class Projects {
 	constructor() {
 		this.bindElements();
-		this.$projectsContainer.css('width', this.$projects.length * 100 + "%");
-		this.currentDisplay = 'block';
+		// this.$projectsContainer.css('width', this.$projects.length * 100 + "%");
+		// this.currentDisplay = 'block';
 	}
 
 	onStop() {
@@ -20,7 +20,7 @@ class Projects {
 	}
 
 	onResize() {
-		this.resizePictureContainer();
+		// this.resizePictureContainer();
 	}
 
 	resizePictureContainer() {
