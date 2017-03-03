@@ -38,6 +38,7 @@ class Home {
 				this.$projects.removeClass('active');
 			} else {
 				this.$projects.removeClass('active')
+				this.$projects.addClass('inactive')
 				$(e.currentTarget).addClass('active');	
 			}
 			

@@ -45,6 +45,14 @@
 					@include transition(max-height 1s ease);
 				}
 			}
+			
+			&.active {
+				color: $darkest-white;
+				.baseline {
+					max-height: 10px;
+					@include transition(max-height 1s ease);
+				}
+			}
 
 			.headline {
 				@include display(flex);
