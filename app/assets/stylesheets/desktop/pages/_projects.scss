@@ -4,8 +4,6 @@
 	position: relative;
 	overflow: hidden;
 
-	@include align-items(center);
-	@include display(flex);
 	.projects {
 		position: absolute;
 		margin-top: 14px;
