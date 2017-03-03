@@ -814,6 +814,8 @@ class Home {
 		this.out = false;
 		this.p5 = new p5(this.perlinCircle.bind(this), "home");
 		this.$menu.addClass('active');
+		this.bindElements();
+		this.bindEvents();
 	}
 
 	onResize() {
@@ -824,7 +826,24 @@ class Home {
 
 	bindElements() {
 		this.$home = $('#home');
-		this.$menu = $('nav .home')
+		this.$menu = $('nav .home');
+		this.$projects = $('.project');
+	}
+
+	bindEvents() {
+		this.$projects.click(function(e) {
+			if ($(e.currentTarget).hasClass('active')) {
+				this.$projects.removeClass('active');
+			} else {
+				this.$projects.removeClass('active')
+				$(e.currentTarget).addClass('active');	
+			}
+			
+			
+		}.bind(this))
+		this.$projects.click(function(e) {
+
+		})
 	}
 
 	setupParameters() {
@@ -906,8 +925,8 @@ class Home {
 class Projects {
 	constructor() {
 		this.bindElements();
-		this.$projectsContainer.css('width', this.$projects.length * 100 + "%");
-		this.currentDisplay = 'block';
+		// this.$projectsContainer.css('width', this.$projects.length * 100 + "%");
+		// this.currentDisplay = 'block';
 	}
 
 	onStop() {
@@ -923,7 +942,7 @@ class Projects {
 	}
 
 	onResize() {
-		this.resizePictureContainer();
+		// this.resizePictureContainer();
 	}
 
 	resizePictureContainer() {
@@ -947,14 +966,12 @@ class Projects {
 	}
 
 	bindEvents() {
-		console.log(this.$next)
 		this.$next.on('click.projects', function(e) {
-			console.log("next")
 			this.nextProject();
-		})
+		}.bind(this))
 		this.$previous.on('click.projects', function(e) {
 			this.previousProject();
-		})
+		}.bind(this))
 		$(document).on('keyup.projects', function(e) {
 			if (e.keyCode == 37) {
 				this.previousProject();

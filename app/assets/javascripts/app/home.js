@@ -34,8 +34,17 @@ class Home {
 
 	bindEvents() {
 		this.$projects.click(function(e) {
-			console.log(e)
-			$(e.target).parent('.project').toggleClass('active');
+			if ($(e.currentTarget).hasClass('active')) {
+				this.$projects.removeClass('active');
+			} else {
+				this.$projects.removeClass('active')
+				$(e.currentTarget).addClass('active');	
+			}
+			
+			
+		}.bind(this))
+		this.$projects.click(function(e) {
+
 		})
 	}
 
