@@ -39,7 +39,7 @@ class Home {
 				this.$projects.removeClass('inactive');
 			} else {
 				this.$projects.removeClass('active')
-				this.$projects.addClass('inactive')
+				this.$projects.not($(e.currentTarget)).addClass('inactive')
 				$(e.currentTarget).addClass('active');	
 				$(e.currentTarget).removeClass('inactive');	
 			}
