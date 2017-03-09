@@ -21,6 +21,11 @@
             <p>Freelance developer based in Paris and 4th year Hetic student.</p>
             <p>I am currently looking for an internship ( from July to December), feel free to contact me.</p>
           </div>
+          <div class="row">
+            <h1>
+              Selected project
+            </h1>
+          </div>
           <% @projects.each do |project| %>
             <a class="project-link" href="<%= project.url %>"><p><span class="project"><%= project.name %></span> <span class="skills"><%= project.skills.pluck(:name).to_sentence %></span></p></a>
           <% end %>

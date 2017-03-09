@@ -1,12 +1,12 @@
 #home {
 	background-color: black;
 	color: $white;
+	.row {
+		margin-top: 20px;
+	}
 	a.project-link {
 	    text-decoration: none;
 	    p {
-	    	&:first-child {
-				margin-top: 25px;
-	    	}
 			&:hover {
 			    text-decoration: underline;
 			}
