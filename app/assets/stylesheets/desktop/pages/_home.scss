@@ -1,10 +1,25 @@
 #home {
 	background-color: black;
 	color: $white;
-}
-.row {
-	@include display(flex);
-	@include flex-direction(row);
-	@include justify-content(space-between);
-	height: 10%;
+	a.project-link {
+	    text-decoration: none;
+	    p {
+	    	&:first-child {
+				margin-top: 25px;
+	    	}
+			&:hover {
+			    text-decoration: underline;
+			}
+			.project {
+			    text-transform: uppercase;
+				font-size: 1.4em;
+				font-family: $bold-font;
+			}
+			.skills {
+				font-family: $light-font;
+				padding-left: 5px;
+			}
+	    }
+	}
+
 }

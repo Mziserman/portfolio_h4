@@ -8,10 +8,5 @@
 @media screen and (min-width: $break-small) {
 	@import "desktop/macro/main";
 	@import "desktop/macro/section";
-
-	@import "desktop/micro/navigation";
-
 	@import "desktop/pages/home";
-	@import "desktop/pages/projects";
-	@import "desktop/pages/contact";
 }

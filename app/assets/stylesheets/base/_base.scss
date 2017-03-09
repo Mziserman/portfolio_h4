@@ -6,18 +6,18 @@ body, html {
 	@include display(flex);
 	height: 100%;
 	width: 100%;
-	font-family: $base-font;
+	font-family: $light-font;
 	font-size: modular-scale(1);
 	line-height: 21px;
-	background-color: $white;
+	color: $white;
 }
 h1 {
-	font-family: $title-font;
+	font-family: $bold-font;
 	font-size: modular-scale(5);
-	line-height: 50px;
+	line-height: 100px;
 }
 h2 {
-	font-family: $title-font;
+	font-family: $bold-font;
 	font-size: modular-scale(4);
 	line-height: 40px;
 	a {
@@ -25,7 +25,7 @@ h2 {
 	}
 }
 h3 {
-	font-family: $title-font;
+	font-family: $bold-font;
 	font-size: modular-scale(3);
 	line-height: 30px;
 	a {
@@ -33,7 +33,7 @@ h3 {
 	}
 }
 h4 {
-	font-family: $title-font;
+	font-family: $bold-font;
 	font-size: modular-scale(2);
 	line-height: 25px;
 }
@@ -46,4 +46,8 @@ img {
 
 a {
 	color: $white;
+	line-height: 30px;
+}
+p {
+	line-height: 20px;
 }

@@ -12,12 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20170106144534) do
 
-  create_table "domains", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "offers", force: :cascade do |t|
     t.string   "title"
     t.string   "entreprise"
@@ -34,7 +28,6 @@ ActiveRecord::Schema.define(version: 20170106144534) do
     t.string   "url"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.string   "color"
   end
 
   create_table "projects_skills", force: :cascade do |t|
@@ -44,7 +37,6 @@ ActiveRecord::Schema.define(version: 20170106144534) do
 
   create_table "skills", force: :cascade do |t|
     t.string   "name"
-    t.integer  "domain_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

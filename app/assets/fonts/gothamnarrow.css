@@ -1,0 +1,32 @@
+@font-face {
+	font-family: 'gothamnarrow-bold';
+	src: url('GothamNarrow-Bold.eot');
+	src: local('☺'), 
+        url('GothamNarrow-Bold.woff') format('woff'), 
+        url('GothamNarrow-Bold.ttf') format('truetype'), 
+        url('GothamNarrow-Bold.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+  font-family: 'gothamnarrow-medium';
+  src: url('GothamNarrow-Medium.eot');
+  src: local('☺'), 
+        url('GothamNarrow-Medium.woff') format('woff'), 
+        url('GothamNarrow-Medium.ttf') format('truetype'), 
+        url('GothamNarrow-Medium.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gothamnarrow-light';
+  src: url('GothamNarrow-Light.eot');
+  src: local('☺'), 
+        url('GothamNarrow-Light.woff') format('woff'), 
+        url('GothamNarrow-Light.ttf') format('truetype'), 
+        url('GothamNarrow-Light.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

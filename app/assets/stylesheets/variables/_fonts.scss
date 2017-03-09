@@ -1,3 +1,38 @@
 @import url('https://fonts.googleapis.com/css?family=Cardo|Pathway+Gothic+One');
 $base_font: 'Cardo', serif;
 $title_font: 'Pathway Gothic One', sans-serif;
+$light-font: 'gothamnarrow-light';
+$bold-font: 'gothamnarrow-medium';
+
+@font-face {
+	font-family: 'gothamnarrow-bold';
+	src: url('/assets/GothamNarrow-Bold.eot');
+	src: local('☺'), 
+        url('/assets/GothamNarrow-Bold.woff') format('woff'), 
+        url('/assets/GothamNarrow-Bold.ttf') format('truetype'), 
+        url('/assets/GothamNarrow-Bold.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+  font-family: 'gothamnarrow-medium';
+  src: url('/assets/GothamNarrow-Medium.eot');
+  src: local('☺'), 
+        url('/assets/GothamNarrow-Medium.woff') format('woff'), 
+        url('/assets/GothamNarrow-Medium.ttf') format('truetype'), 
+        url('/assets/GothamNarrow-Medium.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gothamnarrow-light';
+  src: url('/assets/GothamNarrow-Light.eot');
+  src: local('☺'), 
+        url('/assets/GothamNarrow-Light.woff') format('woff'), 
+        url('/assets/GothamNarrow-Light.ttf') format('truetype'), 
+        url('/assets/GothamNarrow-Light.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
