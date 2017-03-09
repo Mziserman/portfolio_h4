@@ -27,7 +27,7 @@
             </h1>
           </div>
           <% @projects.each do |project| %>
-            <a class="project-link" href="<%= project.url %>"><p><span class="project"><%= project.name %></span><span class="space"></span><span class="skills"><%= project.skills.pluck(:name).to_sentence %></span></p></a>
+            <a class="project-link" href="<%= project.url %>"><p><span class="project"><%= project.name %></span><span class="space"></span><span class="skills"><%= project.skills.pluck(:name).join(" - ") %></span></p></a>
           <% end %>
           <div class="contact-container">
             <a href="mailto:martinziserman@gmail.com"><span class="contact">CONTACT</span></a> - <a href="https://github.com/MZiserman/"><span class="github">GITHUB</span></a>
