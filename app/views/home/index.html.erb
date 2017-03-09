@@ -12,18 +12,18 @@
           <% flash.each do |key, value| %>
             <div class="alert alert-<%= key %>"><%= value %></div>
           <% end %>
-          <div class="row">
+          <div class="title-container name">
             <h1>
               Martin Ziserman
             </h1>
           </div>
-          <div class="row">
+          <div class="presentation">
             <p>Freelance developer based in Paris and 4th year Hetic student.</p>
             <p>I am currently looking for an internship ( from July to December), feel free to contact me.</p>
           </div>
-          <div class="row">
+          <div class="title-container">
             <h1>
-              Selected project
+              Selected projects
             </h1>
           </div>
           <% @projects.each do |project| %>

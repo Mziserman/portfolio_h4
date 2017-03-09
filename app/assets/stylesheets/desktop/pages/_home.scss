@@ -1,13 +1,13 @@
 #home {
 	background-color: black;
 	color: $white;
-	.row {
+	.title-container {
 		margin-top: 20px;
 	}
 	a.project-link {
 	    text-decoration: none;
 	    p {
-	    	margin-top: 10px;
+	    	margin-bottom: 10px;
 			&:hover {
 			    text-decoration: underline;
 			}
@@ -25,7 +25,7 @@
 			}
 	    }
 	}
-	
+
 
 	.contact-container {
 		position: absolute;
