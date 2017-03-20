@@ -41,20 +41,20 @@ class Portfolio {
 	}
 
 	setupParameters() {
-		this.width = this.$home.width();
-		this.height = this.$home.height();
+		this.width = window.innerWidth;
+		this.height = window.inneHeight;
 		this.fieldIntensity = 10;
 		this.fieldScale = 350;
 		this.agentCount = 400;
 		this.circleRadius = this.width > this.height ? this.height / 2.5 : this.width / 2.5;
 		this.circleAlpha = 20;
-		this.circleLineWeight = 0.3;
-		this.circleHue = 200;
+		this.circleLineWeight = 1.3;
+		this.circleHue = 100;
 		this.circleSaturation = 100;
-		this.circleBrightness = 60;
-		this.hueStep = 0.6;
-		this.saturationStep = -0.02;
-		this.brightnessStep = 0.1;
+		this.circleBrightness = 100;
+		this.hueStep = 1;
+		this.saturationStep = 1;
+		this.brightnessStep = 0;
 		this.agents = [];
 	}
 
@@ -101,7 +101,7 @@ class Portfolio {
 		})
 
 		p.draw = function() {
-			p.beginShape();
+			p.beginShape();	
 			self.agents.forEach(function(a) {
 				// if (a.isOutsideSketch() == 1 || a.isOutsideSketch() == 3) {
 				// 	a.sign = a.sign * -1
@@ -126,7 +126,7 @@ class Portfolio {
 			// if (p.frameCount % (Math.floor(self.circleRadius * 8)) == 0) {
 			// 	p.noLoop();
 			// }
-			p.background(255, 0, 0, 5)
+			p.background(255, 0, 0, 15)
 		};
 	}
 }
