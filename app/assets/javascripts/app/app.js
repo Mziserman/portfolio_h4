@@ -42,7 +42,7 @@ class Portfolio {
 
 	setupParameters() {
 		this.width = window.innerWidth;
-		this.height = window.inneHeight;
+		this.height = window.innerHeight;
 		this.fieldIntensity = 10;
 		this.fieldScale = 350;
 		this.agentCount = 400;

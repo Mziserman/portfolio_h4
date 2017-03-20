@@ -717,91 +717,10 @@ for(var h=a[g],i=4*g,j=0;4>j;j++){var k=h[j],l=new d.Vector((2*(1&k)-1)*c/2,((2&
 
 class Portfolio {
 	constructor() {
-		this.bindReferences();
 		this.bindElements();
 		this.bindEvents();
-		this.currentScreen = this.sectionReferences["home"];
-		this.currentScreen.reference.onStart();
-	}
-
-	bindReferences() {
-		this.sectionReferences = {
-			"home": {
-				position: "-0vh",
-				reference: new Home()
-			},
-			"projects": {
-				position: "-100vh",
-				reference: new Projects()
-			},
-			"contact": {
-				position: "-200vh",
-				reference: new Contact()
-			}
-		}
-	}
-
-	bindElements() {
-		this.$main = $('#main');
-		this.$wrapper = this.$main.find('.wrapper');
-	}
-
-	bindEvents() {
-		$('nav ul li a').click(function(e) {
-			e.preventDefault();
-			var target = e.target.dataset.target;
-			this.goTo(target);
-		}.bind(this));
-
-		$(window).resize(_.debounce(function(e) {
-			_.each(this.sectionReferences, function(value, key) {
-				value.reference.onResize();
-			})
-		}.bind(this), 200));
-	}
-
-	goTo(target) {
-		if (this.currentScreen == this.sectionReferences[target]) {
-			return
-		}
-		var position = this.sectionReferences[target].position;
-		this.$wrapper.css('top', position);
-		this.currentScreen.reference.onStop();
-		this.sectionReferences[target].reference.onStart();
-		this.currentScreen = this.sectionReferences[target];
-	}
-}
-;
-"use strict";
-
-class Contact {
-	constructor() {
-		this.bindElements()
-	}
-	onStop() {
-		this.$menu.removeClass('active');
-	}
-
-	onStart() {
-		this.$menu.addClass('active');
-	}
-
-	onResize() {
-
-	}
-
-	bindElements() {
-		this.$contact = $('#contact');
-		this.$menu = $('nav .contact')
-	}
-}
-;
-"use strict";
-
-class Home {
-	constructor() {
-		this.bindElements();
 		this.setupParameters();
+		this.onStart();
 	}
 
 	onStop() {
@@ -831,44 +750,31 @@ class Home {
 	}
 
 	bindEvents() {
-		this.$projects.click(function(e) {
-			if ($(e.currentTarget).hasClass('active')) {
-				this.$projects.removeClass('active');
-				this.$projects.removeClass('inactive');
-			} else {
-				this.$projects.not($(e.currentTarget)).addClass('inactive')
-				this.$projects.removeClass('active')
-				$(e.currentTarget).addClass('active');	
-				$(e.currentTarget).removeClass('inactive');	
-			}
-			
-			
-		}.bind(this))
-		this.$projects.click(function(e) {
-
-		})
+		$(window).resize(_.debounce(function(e) {
+			this.onResize();
+		}.bind(this), 200));
 	}
 
 	setupParameters() {
-		this.width = this.$home.width();
-		this.height = this.$home.height();
+		this.width = window.innerWidth;
+		this.height = window.innerHeight;
 		this.fieldIntensity = 10;
 		this.fieldScale = 350;
 		this.agentCount = 400;
 		this.circleRadius = this.width > this.height ? this.height / 2.5 : this.width / 2.5;
 		this.circleAlpha = 20;
-		this.circleLineWeight = 0.3;
-		this.circleHue = 200;
+		this.circleLineWeight = 1.3;
+		this.circleHue = 100;
 		this.circleSaturation = 100;
-		this.circleBrightness = 60;
-		this.hueStep = 0.6;
-		this.saturationStep = -0.02;
-		this.brightnessStep = 0.1;
+		this.circleBrightness = 100;
+		this.hueStep = 1;
+		this.saturationStep = 1;
+		this.brightnessStep = 0;
+		this.agents = [];
 	}
 
 	perlinCircle(p) {
 		var self = this;
-		var agents;
 		var fader;
 		var fader2;
 		var field;
@@ -876,16 +782,15 @@ class Home {
 			p.createCanvas(self.width, self.height);
 			field = createPerlinField(self.fieldIntensity, self.fieldScale);
 			var angleStep = p.TWO_PI / self.agentCount;
-			agents = [];
 			var a, x, y;
-			for (var i = self.agentCount - 1; i >= 0; i--) {
-				x = p.width / 2 + p.cos(i * angleStep) * self.circleRadius;
-				y = p.height / 2 + p.sin(i * angleStep) * self.circleRadius;
-				a = createAgent(p.createVector(x, y), p);
-				a.isPositionResetWhenOutside = false;
-				a.sign = a.position.y > p.height / 2 ? 1 : -1;
-				agents.push(a);
-			};
+			// for (var i = self.agentCount - 1; i >= 0; i--) {
+			// 	x = p.width / 2 + p.cos(i * angleStep) * self.circleRadius;
+			// 	y = p.height / 2 + p.sin(i * angleStep) * self.circleRadius;
+			// 	a = createAgent(p.createVector(x, y), p);
+			// 	a.isPositionResetWhenOutside = false;
+			// 	a.sign = a.position.y > p.height / 2 ? 1 : -1;
+			// 	self.agents.push(a);
+			// };
 
 			fader = createColorFader(0, self.circleSaturation, self.circleBrightness, 0, self.saturationStep, self.brightnessStep);
 			fader2 = createColorFader(self.circleHue, 0, 0, self.hueStep, 0, 0); // On utilise ici un second fader pour faire évoluer la teinte du cercle au cours du temps
@@ -894,9 +799,25 @@ class Home {
 			p.colorMode(p.HSB, 360, 100, 100, 255);
 			p.loop();
 		};
+
+
+		$(window).mousemove(function(e) {
+			var x = e.pageX;
+			var y = e.pageY;
+			var a = createAgent(p.createVector(x, y), p);
+			a.isPositionResetWhenOutside = false;
+			a.sign = a.position.y > p.height / 2 ? 1 : -1;
+
+			self.agents.push(a);
+			
+			if (self.agents.length > self.agentCount) {
+				self.agents.shift();
+			}
+		})
+
 		p.draw = function() {
-			p.beginShape();
-			agents.forEach(function(a) {
+			p.beginShape();	
+			self.agents.forEach(function(a) {
 				// if (a.isOutsideSketch() == 1 || a.isOutsideSketch() == 3) {
 				// 	a.sign = a.sign * -1
 				// }
@@ -906,109 +827,23 @@ class Home {
 				p.strokeWeight(self.circleLineWeight);
 				p.noFill();
 				p.curveVertex(a.position.x, a.position.y);
+
 			});
-			if (agents.length > 3) {
-				p.curveVertex(agents[0].position.x, agents[0].position.y);
-				p.curveVertex(agents[1].position.x, agents[1].position.y);
-				p.curveVertex(agents[2].position.x, agents[2].position.y);
+			if (self.agents.length > 3) {
+				p.curveVertex(self.agents[0].position.x, self.agents[0].position.y);
+				p.curveVertex(self.agents[1].position.x, self.agents[1].position.y);
+				p.curveVertex(self.agents[2].position.x, self.agents[2].position.y);
 			}
 			p.endShape();
 			if (self.out) {
 				p.noLoop();
 			}
-			if (p.frameCount % (Math.floor(self.circleRadius * 8)) == 0) {
-				p.noLoop();
-			}
+			// if (p.frameCount % (Math.floor(self.circleRadius * 8)) == 0) {
+			// 	p.noLoop();
+			// }
+			p.background(255, 0, 0, 15)
 		};
 	}
-}
-;
-"use strict";
-
-class Projects {
-	constructor() {
-		this.bindElements();
-		// this.$projectsContainer.css('width', this.$projects.length * 100 + "%");
-		// this.currentDisplay = 'block';
-	}
-
-	onStop() {
-		this.$menu.removeClass('active');
-		this.unbindEvents();
-	}
-
-	onStart() {
-		this.$menu.addClass('active');
-		this.bindEvents();
-		this.goTo(0);
-		this.resizePictureContainer();
-	}
-
-	onResize() {
-		// this.resizePictureContainer();
-	}
-
-	resizePictureContainer() {
-		var $picture_container = this.$projects.find('.picture_container');
-		if (this.currentDisplay == 'inline') {
-			$picture_container.css('display', 'block');
-			this.currentDisplay = 'block';
-		} else {
-			$picture_container.css('display', 'inline');
-			this.currentDisplay = 'inline';
-		}
-	}
-
-	bindElements() {
-		this.$projectsPageContainer = $('#projects');
-		this.$projectsContainer = this.$projectsPageContainer.find('.projects');
-		this.$next = this.$projectsPageContainer.find('.next');
-		this.$previous = this.$projectsPageContainer.find('.previous');
-		this.$projects = this.$projectsContainer.find('.project');
-		this.$menu = $('nav .projects');
-	}
-
-	bindEvents() {
-		this.$next.on('click.projects', function(e) {
-			this.nextProject();
-		}.bind(this))
-		this.$previous.on('click.projects', function(e) {
-			this.previousProject();
-		}.bind(this))
-		$(document).on('keyup.projects', function(e) {
-			if (e.keyCode == 37) {
-				this.previousProject();
-			} else if (e.keyCode == 39) {
-				this.nextProject();
-			}
-		}.bind(this))
-	}
-
-	unbindEvents() {
-		$(document).off('.projects')
-	}
-
-	previousProject() {
-		if (this.currentProject == 0) {
-			this.goTo(this.$projects.length - 1);
-		} else {
-			this.goTo(this.currentProject - 1);
-		}
-	}
-
-	nextProject() {
-		if (this.currentProject == this.$projects.length - 1) {
-			this.goTo(0);
-		} else {
-			this.goTo(this.currentProject + 1);
-		}
-	}
-
-	goTo(projectPosition) {
-		var position = -projectPosition * 100;
-		this.$projectsContainer.css('left', position + "%");
-		this.currentProject = projectPosition;
-	} 
 }
 ;
 (function() {
