@@ -53,8 +53,8 @@ class Portfolio {
 		this.circleSaturation = 100;
 		this.circleBrightness = 100;
 		this.hueStep = 1;
-		this.saturationStep = 1;
-		this.brightnessStep = 0;
+		this.saturationStep = -0.009;
+		this.brightnessStep = 0.001;
 		this.agents = [];
 	}
 
